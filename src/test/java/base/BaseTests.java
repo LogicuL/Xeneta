@@ -1,4 +1,6 @@
 package base;
 
-public class BaseTests {
+public class BaseTests
+{
+    private WebDriver
 }
