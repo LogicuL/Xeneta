@@ -2,13 +2,13 @@ package pages;
 
 import helpers.DriverUtils;
 
-public class XenetaCareers
+public class XenetaHomepage
 {
     private WebDriver driver;
     private NgWebDriver ngDriver;
     DriverUtils driverUtils = new DriverUtils();
 
-    public XenetaCareers(WebDriver driver, NgWebDriver ngDriver)
+    public XenetaHomepage(WebDriver driver, NgWebDriver ngDriver)
     {
         this.driver = driver;
         this.ngDriver = ngDriver;
