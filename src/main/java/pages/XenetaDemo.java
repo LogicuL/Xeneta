@@ -1,6 +1,8 @@
 package pages;
 
+import com.paulhammant.ngwebdriver.NgWebDriver;
 import helpers.DriverUtils;
+import org.openqa.selenium.WebDriver;
 
 public class XenetaDemo
 {

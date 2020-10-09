@@ -1,4 +1,8 @@
 package careers;
 
-public class XenetaCareersTests {
+import base.BaseTests;
+
+public class XenetaCareersTests extends BaseTests
+{
+
 }

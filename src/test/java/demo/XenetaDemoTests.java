@@ -1,4 +1,8 @@
 package demo;
 
-public class XenetaDemoTests {
+import base.BaseTests;
+
+public class XenetaDemoTests extends BaseTests
+{
+
 }

@@ -1,6 +1,9 @@
 package pages;
 
+import com.paulhammant.ngwebdriver.NgWebDriver;
 import helpers.DriverUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 public class XenetaHomepage
 {
@@ -12,5 +15,17 @@ public class XenetaHomepage
     {
         this.driver = driver;
         this.ngDriver = ngDriver;
+    }
+
+    public XenetaDemo navigateToDemoPage()
+    {
+       driver.get("xeneta.com/demo");
+       return new XenetaDemo(driver,ngDriver);
+    }
+
+    public XenetaCareers navigateToCareersPage()
+    {
+        driver.get("xeneta.com/careers");
+        return new XenetaCareers(driver,ngDriver);
     }
 }
