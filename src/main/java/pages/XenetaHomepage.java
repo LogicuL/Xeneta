@@ -19,13 +19,13 @@ public class XenetaHomepage
 
     public XenetaDemo navigateToDemoPage()
     {
-       driver.get("xeneta.com/demo");
+       driver.get("https://www.xeneta.com/demo");
        return new XenetaDemo(driver,ngDriver);
     }
 
     public XenetaCareers navigateToCareersPage()
     {
-        driver.get("xeneta.com/careers");
+        driver.get("https://www.xeneta.com/careers");
         return new XenetaCareers(driver,ngDriver);
     }
 }
