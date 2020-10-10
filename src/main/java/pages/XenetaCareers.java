@@ -81,34 +81,34 @@ public class XenetaCareers
     {
         driverUtils.scrollToElement(driver,driver.findElement(values));
         driver.findElement(firstValue).click();
-        return driver.findElement(firstValueContent).getText();
+        return driverUtils.getTextFromElement(driver,driver.findElement(firstValueContent));
     }
 
     public String getSecondValue()
     {
         driverUtils.scrollToElement(driver,driver.findElement(values));
         driver.findElement(secondValue).click();
-        return driver.findElement(secondValueContent).getText();
+        return driverUtils.getTextFromElement(driver,driver.findElement(secondValueContent));
     }
 
     public String getThirdValue()
     {
         driverUtils.scrollToElement(driver,driver.findElement(values));
         driver.findElement(thirdValue).click();
-        return driver.findElement(thirdValueContent).getText();
+        return driverUtils.getTextFromElement(driver,driver.findElement(thirdValueContent));
     }
 
     public String getFourthValue()
     {
         driverUtils.scrollToElement(driver,driver.findElement(values));
         driver.findElement(fourthValue).click();
-        return driver.findElement(fourthValueContent).getText();
+        return driverUtils.getTextFromElement(driver,driver.findElement(fourthValueContent));
     }
 
     public String getOpenPositions()
     {
         driverUtils.scrollToElement(driver,driver.findElement(openRoles));
-        return driver.findElement(openRoles).getText();
+        return driverUtils.getTextFromElement(driver,driver.findElement(openRoles));
     }
 
 

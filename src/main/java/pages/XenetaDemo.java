@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
+
 public class XenetaDemo
 {
 
@@ -15,6 +17,9 @@ public class XenetaDemo
 
     //Elements
     private By demoPageText = By.xpath("//*[@id=\"hs_cos_wrapper_module_1599651837851372_\"]/h1[2]");
+    private By scheduleNowButton = By.linkText("SCHEDULE ONLINE");
+    private By watchNowButton = By.linkText("WATCH NOW");
+    private By signUpButton = By.linkText("SIGN UP HERE");
 
     public XenetaDemo(WebDriver driver, NgWebDriver ngDriver)
     {
@@ -31,5 +36,52 @@ public class XenetaDemo
         else
             return false;
     }
+
+    public String scheduleOneOnOneDemo()
+    {
+        String pageUrl;
+        driverUtils.waitForElementToBeDisplayed(driver,driver.findElement(scheduleNowButton));
+        driverUtils.scrollToElement(driver,driver.findElement(scheduleNowButton));
+        driver.findElement(scheduleNowButton).click();
+        switchToSecondTab();
+        pageUrl = driver.getCurrentUrl();
+        switchBackToMainTabAfterClosingTheSecond();
+        return pageUrl;
+    }
+
+    public String watchNow()
+    {
+        driverUtils.waitForElementToBeDisplayed(driver,driver.findElement(watchNowButton));
+        driverUtils.scrollToElement(driver,driver.findElement(watchNowButton));
+        driver.findElement(watchNowButton).click();
+        return driver.getCurrentUrl();
+    }
+
+    public String signUp()
+    {
+        String pageUrl;
+        driverUtils.waitForElementToBeDisplayed(driver,driver.findElement(signUpButton));
+        driverUtils.scrollToElement(driver,driver.findElement(signUpButton));
+        driver.findElement(signUpButton).click();
+        switchToSecondTab();
+        pageUrl = driver.getCurrentUrl();
+        switchBackToMainTabAfterClosingTheSecond();
+        return pageUrl;
+    }
+
+    private void switchToSecondTab()
+    {
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
+    }
+
+    private void switchBackToMainTabAfterClosingTheSecond()
+    {
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        driver.close();
+        driver.switchTo().window(tabs.get(0));
+    }
+
+
 
 }
