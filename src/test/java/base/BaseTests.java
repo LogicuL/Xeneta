@@ -37,13 +37,13 @@ public class BaseTests
     }
 
     @BeforeMethod
-    public void methodCleanup()
+    public void methodSetup()
     {
         driver.get("https://www.xeneta.com/");
         driver.manage().window().maximize();
         ngWebDriver.waitForAngularRequestsToFinish();
-
         homepage = new XenetaHomepage(driver,ngWebDriver);
+        ngWebDriver.waitForAngularRequestsToFinish();
     }
 
     @AfterClass
