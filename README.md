@@ -13,3 +13,5 @@ The tests are written using Page Object Model as a design pattern (most common p
 
 In a normal situation, the 'resources/screenshots' folder should be empty - I just left there a few screenshots from my runnings of the tests so you can see how it looks.
  
+The test scenarios can be found in the project under the 'testcases' folder.
+They are written with  the gherkin syntax so it is easier to read and, if it's the case, to be easier to translate them into scenarios to be used in the code with Cucumber.
