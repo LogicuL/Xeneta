@@ -31,6 +31,7 @@ public class BaseTests
         System.setProperty("webdriver.chrome.driver","resources/chromedriver.exe");
         driver = new ChromeDriver();
 
+        // defined the NgWebDriver for having more angular related actions available
         JavascriptExecutor jsDriver = (JavascriptExecutor) driver;
         ngWebDriver = new NgWebDriver(jsDriver);
 
@@ -52,6 +53,10 @@ public class BaseTests
         driver.quit();
     }
 
+    /**
+     * Everythime a test fails, there is a screenshot with the failure added to the resources/screenshot directory in this project
+     * @param result
+     */
     @AfterMethod
     public void recordFailure(ITestResult result){
         if(ITestResult.FAILURE == result.getStatus())

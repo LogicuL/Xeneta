@@ -12,7 +12,7 @@ import java.time.Duration;
 
 public class DriverUtils
 {
-
+    /*Method that waits for a specific element to be visible in the page*/
     public void waitForElementToBeDisplayed(WebDriver driver, WebElement elementToBeDisplayed)
     {
         FluentWait wait = new FluentWait(driver).withTimeout(Duration.ofSeconds(20)).pollingEvery(Duration.ofSeconds(1));
@@ -20,12 +20,14 @@ public class DriverUtils
         wait.until(ExpectedConditions.visibilityOf((elementToBeDisplayed)));
     }
 
+    /*Method that scrolls to a specific element*/
     public void scrollToElement(WebDriver driver, WebElement elementToScroll)
     {
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("arguments[0].scrollIntoView(true);", elementToScroll);
     }
 
+    /*Method that gets the text from a specific element*/
     public String getTextFromElement(WebDriver driver, WebElement element)
     {
         waitForElementToBeDisplayed(driver,element);

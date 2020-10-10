@@ -4,7 +4,6 @@ import com.paulhammant.ngwebdriver.NgWebDriver;
 import helpers.DriverUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 
@@ -27,6 +26,10 @@ public class XenetaDemo
         this.ngDriver = ngDriver;
     }
 
+    /**
+     * Check demo page is displayed
+
+     */
     public boolean demoPageIsDisplayed()
     {
         String pageWelcomeText = driverUtils.getTextFromElement(driver,driver.findElement(demoPageText));
@@ -37,6 +40,9 @@ public class XenetaDemo
             return false;
     }
 
+    /**
+     * Check you can schedule a demo
+     */
     public String scheduleOneOnOneDemo()
     {
         String pageUrl;
@@ -49,6 +55,9 @@ public class XenetaDemo
         return pageUrl;
     }
 
+    /**
+     *  Check you can watch a demo
+     */
     public String watchNow()
     {
         driverUtils.waitForElementToBeDisplayed(driver,driver.findElement(watchNowButton));
@@ -57,6 +66,9 @@ public class XenetaDemo
         return driver.getCurrentUrl();
     }
 
+    /**
+     * Check you can sign up
+     */
     public String signUp()
     {
         String pageUrl;

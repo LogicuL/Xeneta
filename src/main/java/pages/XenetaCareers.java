@@ -36,22 +36,19 @@ public class XenetaCareers
         this.ngDriver = ngDriver;
     }
 
+    /** Check the Careers page is displayed by verifying the header of the page   */
+
     public boolean careersPageIsDisplayed()
     {
         driverUtils.scrollToElement(driver,driver.findElement(careersPageText));
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         String pageWelcomeText = driverUtils.getTextFromElement(driver,driver.findElement(careersPageText));
-        System.out.println(pageWelcomeText);
         if(pageWelcomeText.contains("Help us build the future of freight procurement."))
             return true;
         else
             return false;
     }
 
+    /**  Get all the departments displayed on the page     **/
     public List<String> getListOfDepartments()
     {
         driverUtils.scrollToElement(driver,driver.findElement(departmentsList));
@@ -59,6 +56,7 @@ public class XenetaCareers
         return selectedElements.stream().map(e->e.getText()).collect(Collectors.toList());
     }
 
+    /**Verify all the correct departments are displayed on the page*/
     public boolean allDepartmentsAreDisplayed()
     {
         boolean flag = false;
@@ -77,6 +75,7 @@ public class XenetaCareers
         return flag;
     }
 
+    /**Get the text of the first value of Xeneta*/
     public String getFirstValue()
     {
         driverUtils.scrollToElement(driver,driver.findElement(values));
@@ -84,6 +83,7 @@ public class XenetaCareers
         return driverUtils.getTextFromElement(driver,driver.findElement(firstValueContent));
     }
 
+    /**Get the text of the second value of Xeneta*/
     public String getSecondValue()
     {
         driverUtils.scrollToElement(driver,driver.findElement(values));
@@ -91,6 +91,7 @@ public class XenetaCareers
         return driverUtils.getTextFromElement(driver,driver.findElement(secondValueContent));
     }
 
+    /**Get the text of the third value of Xeneta*/
     public String getThirdValue()
     {
         driverUtils.scrollToElement(driver,driver.findElement(values));
@@ -98,6 +99,7 @@ public class XenetaCareers
         return driverUtils.getTextFromElement(driver,driver.findElement(thirdValueContent));
     }
 
+    /**Get the text of the fourth value of Xeneta*/
     public String getFourthValue()
     {
         driverUtils.scrollToElement(driver,driver.findElement(values));
@@ -105,6 +107,7 @@ public class XenetaCareers
         return driverUtils.getTextFromElement(driver,driver.findElement(fourthValueContent));
     }
 
+    /**Check that the <<Open Roles>> section is displayed on the careers page*/
     public String getOpenPositions()
     {
         driverUtils.scrollToElement(driver,driver.findElement(openRoles));
